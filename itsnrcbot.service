@@ -1,0 +1,17 @@
+# /etc/systemd/system/itsnrcbot.service
+# Edit User and the two paths, then:
+#   sudo systemctl daemon-reload && sudo systemctl enable --now itsnrcbot
+[Unit]
+Description=Itsnrcbot Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=root
+WorkingDirectory=/root/Itsnrcbot
+ExecStart=/root/Itsnrcbot/venv/bin/python bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

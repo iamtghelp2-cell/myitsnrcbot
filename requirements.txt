@@ -1,0 +1,5 @@
+pyrofork==2.3.45
+TgCrypto
+motor
+dnspython
+uvloop; sys_platform != "win32"
